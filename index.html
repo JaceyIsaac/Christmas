@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merry Christmas 🎄</title>
+
+<style>
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Georgia", serif;
+}
+
+/* ===== BACKGROUND ===== */
+body {
+  background: linear-gradient(#b30000, #660000);
+  color: #fff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ===== CARD CONTAINER ===== */
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  color: #333;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: #b30000;
+  font-size: 2.5rem;
+}
+
+.header p {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* ===== LETTER ===== */
+.letter {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.letter p {
+  margin-bottom: 15px;
+}
+
+/* ===== PHOTO SWIPE ===== */
+.gallery-title {
+  text-align: center;
+  color: #b30000;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.gallery {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+.gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+  background: #b30000;
+  border-radius: 10px;
+}
+
+.photo {
+  min-width: 250px;
+  height: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+  scroll-snap-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #b30000;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>🎄 Merry Christmas 🎄</h1>
+    <p>With love and warm wishes</p>
+  </div>
+
+  <div class="letter">
+    <p>Dear You,</p>
+
+    <p>
+      This Christmas, I just want to remind you how special you are.
+      May your days be filled with warmth, joy, and peaceful moments
+      shared with the people you love.
+    </p>
+
+    <p>
+      Thank you for all the memories we’ve made this year.
+      I hope the coming year brings you happiness, good health,
+      and endless reasons to smile.
+    </p>
+
+    <p>
+      Merry Christmas and a Happy New Year! 🎁✨
+    </p>
+
+    <p>With love,<br>❤️</p>
+  </div>
+
+  <h2 class="gallery-title">📸 Our Christmas Memories</h2>
+
+  <div class="gallery">
+    <div class="photo">
+      <img src="photo1.jpg" alt="Christmas Photo 1">
+    </div>
+    <div class="photo">
+      <img src="photo2.jpg" alt="Christmas Photo 2">
+    </div>
+    <div class="photo">
+      <img src="photo3.jpg" alt="Christmas Photo 3">
+    </div>
+  </div>
+
+  <div class="footer">
+    ❄️ Made with love this Christmas ❄️
+  </div>
+
+</div>
+
+</body>
+</html>
