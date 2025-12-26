@@ -21,13 +21,12 @@ body {
   overflow-x: hidden;
 }
 
-/* Animated snowflakes */
+/* Snowflakes */
 .snowflake {
   position: fixed;
   top: -10px;
   color: #fff;
   font-size: 1em;
-  font-family: Arial, sans-serif;
   text-shadow: 0 0 5px #fff;
   animation: fall linear infinite;
   z-index: 1;
@@ -35,52 +34,35 @@ body {
 }
 
 @keyframes fall {
-  to {
-    transform: translateY(100vh);
-  }
+  to { transform: translateY(100vh); }
 }
 
 .container {
   max-width: 900px;
   margin: auto;
-  background: linear-gradient(135deg, #fff 0%, #fffef8 100%);
+  background: #fff;
   color: #333;
   border-radius: 25px;
   padding: 40px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.4);
   position: relative;
   z-index: 2;
-  animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 .header {
   text-align: center;
   margin-bottom: 40px;
-  position: relative;
 }
 
 .header h1 {
   color: #b30000;
   font-size: 3rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-  animation: glow 2s ease-in-out infinite;
-}
-
-@keyframes glow {
-  0%, 100% { text-shadow: 2px 2px 4px rgba(179,0,0,0.3); }
-  50% { text-shadow: 0 0 20px rgba(179,0,0,0.6), 0 0 30px rgba(179,0,0,0.4); }
 }
 
 .header p {
   margin-top: 10px;
   font-style: italic;
   color: #2d5a3d;
-  font-size: 1.2rem;
 }
 
 .letter {
@@ -93,20 +75,9 @@ body {
   border-radius: 10px;
 }
 
-.letter p {
-  margin-bottom: 15px;
-}
-
 .letter p:first-child {
   font-weight: bold;
   color: #b30000;
-  font-size: 1.3rem;
-}
-
-.letter p:last-child {
-  text-align: right;
-  font-style: italic;
-  margin-top: 20px;
 }
 
 .gallery-title {
@@ -114,12 +85,10 @@ body {
   color: #b30000;
   margin-bottom: 25px;
   font-size: 2rem;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .gallery-container {
   position: relative;
-  margin-bottom: 40px;
 }
 
 .gallery {
@@ -128,26 +97,6 @@ body {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding: 20px 0;
-  scroll-behavior: smooth;
-}
-
-.gallery::-webkit-scrollbar {
-  height: 10px;
-}
-
-.gallery::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-.gallery::-webkit-scrollbar-thumb {
-  background: #b30000;
-  border-radius: 10px;
-  transition: background 0.3s;
-}
-
-.gallery::-webkit-scrollbar-thumb:hover {
-  background: #8b0000;
 }
 
 .photo {
@@ -157,25 +106,14 @@ body {
   overflow: hidden;
   scroll-snap-align: center;
   box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   position: relative;
-}
-
-.photo:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 15px 40px rgba(179,0,0,0.4);
 }
 
 .photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.photo:hover img {
-  transform: scale(1.05);
 }
 
 .photo-caption {
@@ -185,7 +123,7 @@ body {
   right: 0;
   background: linear-gradient(transparent, rgba(0,0,0,0.8));
   color: white;
-  padding: 30px 15px 15px;
+  padding: 15px;
   text-align: center;
   font-style: italic;
   opacity: 0;
@@ -200,143 +138,50 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(179,0,0,0.8);
-  color: white;
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 10;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.nav-button:hover {
-  background: #b30000;
-  transform: translateY(-50%) scale(1.1);
-}
-
-.nav-button.prev {
-  left: -25px;
-}
-
-.nav-button.next {
-  right: -25px;
-}
-
-.music-button {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
   background: #b30000;
   color: white;
   border: none;
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   font-size: 1.5rem;
   cursor: pointer;
-  box-shadow: 0 5px 20px rgba(179,0,0,0.5);
-  z-index: 1000;
-  transition: all 0.3s ease;
-  animation: pulse 2s infinite;
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
-.music-button:hover {
-  transform: scale(1.1);
-  background: #8b0000;
-}
+.nav-button.prev { left: -20px; }
+.nav-button.next { right: -20px; }
 
 .footer {
   text-align: center;
   margin-top: 40px;
   color: #b30000;
   font-weight: bold;
-  font-size: 1.2rem;
-  animation: fadeIn 2s ease-in;
 }
 
-.heart {
-  display: inline-block;
-  animation: heartbeat 1.5s ease-in-out infinite;
-}
-
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  25% { transform: scale(1.1); }
-  50% { transform: scale(1); }
-}
-
-/* Modal for full-size images */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
-  z-index: 1001;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.9);
-  animation: fadeIn 0.3s;
+  z-index: 1000;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
 }
 
 .modal-content {
-  margin: auto;
-  display: block;
   max-width: 90%;
   max-height: 90%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
+  margin: auto;
+  display: block;
+  margin-top: 5%;
 }
 
 .close-modal {
   position: absolute;
   top: 20px;
-  right: 35px;
-  color: #f1f1f1;
+  right: 30px;
+  color: white;
   font-size: 40px;
-  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.close-modal:hover {
-  color: #b30000;
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 25px;
-  }
-  
-  .header h1 {
-    font-size: 2rem;
-  }
-  
-  .letter {
-    font-size: 1rem;
-  }
-  
-  .photo {
-    min-width: 250px;
-    height: 320px;
-  }
-  
-  .nav-button {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
 }
 </style>
 </head>
@@ -351,51 +196,44 @@ body {
 
   <div class="letter">
     <p>Dear Daddy,</p>
-
     <p>
       Thank you for the wonderful gifts you have given me. Throughout the 19 years 
-      that I have lived in this world, you have shown me how giving makes someone feel special. 
-      I will continue your legacy of showing love to others. You show genuine kindness, love, 
-      and patience to us. You helped me grow to become a better person; you gave me strength 
-      and taught me how to be resilient.
+      that I have lived in this world, you have shown me how giving makes someone feel special.
     </p>
-
     <p>
-      I may have imperfections, but you still love me for who I am, and I really 
-      appreciate having a father who is emotionally supportive, responsible, and loving. 
-      Thank you, Daddy Franklin, and may we enjoy the two weeks of this holiday season.
+      Thank you, Daddy Franklin. Merry Christmas ❤️
     </p>
-
-    <p>Merry Christmas. <span class="heart">❤️</span></p>
   </div>
 
   <h2 class="gallery-title">📸 Our Precious Memories</h2>
 
   <div class="gallery-container">
-    <button class="nav-button prev" onclick="scrollGallery('left')">‹</button>
-    <div class="gallery" id="photoGallery">
+    <button class="nav-button prev" onclick="scrollGallery(-300)">‹</button>
+
+    <div class="gallery" id="gallery">
       <div class="photo" onclick="openModal(this)">
-        <img id="photo1" alt="First Universal Experience">
-        <div class="photo-caption">Our First Universal Experience - The day we made magic happen together 🌟</div>
+        <img src="images/photo1.jpg" alt="">
+        <div class="photo-caption">Our First Universal Experience 🌟</div>
       </div>
       <div class="photo" onclick="openModal(this)">
-        <img id="photo2" alt="Loving & Supportive Parents">
-        <div class="photo-caption">Surrounded by Love - Your hugs have always been my safe place 💝</div>
+        <img src="images/photo2.jpg" alt="">
+        <div class="photo-caption">Surrounded by Love 💝</div>
       </div>
       <div class="photo" onclick="openModal(this)">
-        <img id="photo3" alt="My Dream University">
-        <div class="photo-caption">My Dream University - You believed in me when I doubted myself 🎓</div>
+        <img src="images/photo3.jpg" alt="">
+        <div class="photo-caption">My Dream University 🎓</div>
       </div>
       <div class="photo" onclick="openModal(this)">
-        <img id="photo4" alt="AirBnB Business">
-        <div class="photo-caption">Building Dreams Together - Your entrepreneurial spirit inspires me ✨</div>
+        <img src="images/photo4.jpg" alt="">
+        <div class="photo-caption">Building Dreams Together ✨</div>
       </div>
       <div class="photo" onclick="openModal(this)">
-        <img id="photo5" alt="Unexpected Graduation Day Attendance">
-        <div class="photo-caption">You Were There - The surprise that made my graduation perfect 🎉</div>
+        <img src="images/photo5.jpg" alt="">
+        <div class="photo-caption">You Were There 🎉</div>
       </div>
     </div>
-    <button class="nav-button next" onclick="scrollGallery('right')">›</button>
+
+    <button class="nav-button next" onclick="scrollGallery(300)">›</button>
   </div>
 
   <div class="footer">
@@ -403,122 +241,40 @@ body {
   </div>
 </div>
 
-<button class="music-button" onclick="toggleMusic()" title="Play Christmas Music">🎵</button>
-
-<!-- Modal for full-size images -->
-<div id="imageModal" class="modal" onclick="closeModal()">
+<!-- Modal -->
+<div class="modal" id="modal" onclick="closeModal()">
   <span class="close-modal">&times;</span>
-  <img class="modal-content" id="modalImage">
+  <img class="modal-content" id="modalImg">
 </div>
 
 <script>
-// Load uploaded images
-async function loadImages() {
-  try {
-    const images = [
-      { id: 'photo1', file: 'Image 1' },
-      { id: 'photo2', file: 'Image 2' },
-      { id: 'photo3', file: 'Image 3' },
-      { id: 'photo4', file: 'Image 4' },
-      { id: 'photo5', file: 'Image 5' }
-    ];
-    
-    for (const img of images) {
-      const data = await window.fs.readFile(img.file);
-      const blob = new Blob([data], { type: 'image/jpeg' });
-      const url = URL.createObjectURL(blob);
-      document.getElementById(img.id).src = url;
-    }
-  } catch (error) {
-    console.error('Error loading images:', error);
-  }
+function scrollGallery(amount) {
+  document.getElementById("gallery").scrollBy({
+    left: amount,
+    behavior: "smooth"
+  });
 }
 
-// Load images when page loads
-window.addEventListener('load', loadImages);
-
-// Create snowflakes
-function createSnowflake() {
-  const snowflake = document.createElement('div');
-  snowflake.className = 'snowflake';
-  snowflake.textContent = '❄';
-  snowflake.style.left = Math.random() * 100 + 'vw';
-  snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
-  snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
-  snowflake.style.opacity = Math.random();
-  document.body.appendChild(snowflake);
-  
-  setTimeout(() => {
-    snowflake.remove();
-  }, 5000);
-}
-
-setInterval(createSnowflake, 300);
-
-// Gallery navigation
-function scrollGallery(direction) {
-  const gallery = document.getElementById('photoGallery');
-  const scrollAmount = 300;
-  
-  if (direction === 'left') {
-    gallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-  } else {
-    gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  }
-}
-
-// Modal functionality
-function openModal(photoElement) {
-  const modal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('modalImage');
-  const img = photoElement.querySelector('img');
-  
-  modal.style.display = 'block';
-  modalImg.src = img.src;
+function openModal(el) {
+  document.getElementById("modal").style.display = "block";
+  document.getElementById("modalImg").src = el.querySelector("img").src;
 }
 
 function closeModal() {
-  document.getElementById('imageModal').style.display = 'none';
+  document.getElementById("modal").style.display = "none";
 }
 
-// Music toggle
-let audio = null;
-let isPlaying = false;
-
-function toggleMusic() {
-  if (!audio) {
-    // Create audio element (using a placeholder - you can replace with actual Christmas music URL)
-    audio = new Audio();
-    // Note: You would need to add a real Christmas music file URL here
-    // audio.src = 'your-christmas-music.mp3';
-    audio.loop = true;
-  }
-  
-  const button = document.querySelector('.music-button');
-  
-  if (isPlaying) {
-    audio.pause();
-    button.textContent = '🎵';
-    isPlaying = false;
-  } else {
-    audio.play().catch(() => {
-      alert('Please add a music file to enable background music!');
-    });
-    button.textContent = '⏸️';
-    isPlaying = true;
-  }
+/* Snow effect */
+function createSnowflake() {
+  const s = document.createElement("div");
+  s.className = "snowflake";
+  s.textContent = "❄";
+  s.style.left = Math.random() * 100 + "vw";
+  s.style.animationDuration = Math.random() * 3 + 2 + "s";
+  document.body.appendChild(s);
+  setTimeout(() => s.remove(), 5000);
 }
-
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowLeft') {
-    scrollGallery('left');
-  } else if (e.key === 'ArrowRight') {
-    scrollGallery('right');
-  } else if (e.key === 'Escape') {
-    closeModal();
-  }
-});
+setInterval(createSnowflake, 300);
 </script>
 
 </body>
