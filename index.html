@@ -414,27 +414,14 @@ body {
 </div>
 
 <script>
-// Load and embed images as base64
-async function loadImages() {
-  try {
-    const images = [
-      { id: 'photo1', file: 'Image 1' },
-      { id: 'photo2', file: 'Image 2' },
-      { id: 'photo3', file: 'Image 3' },
-      { id: 'photo4', file: 'Image 4' },
-      { id: 'photo5', file: 'Image 5' }
-    ];
-    
-    for (const img of images) {
-      const data = await window.fs.readFile(img.file);
-      const base64 = btoa(
-        new Uint8Array(data).reduce((data, byte) => data + String.fromCharCode(byte), '')
-      );
-      document.getElementById(img.id).src = `data:image/jpeg;base64,${base64}`;
-    }
-  } catch (error) {
-    console.error('Error loading images:', error);
-  }
+// Load images from /images folder
+function loadImages() {
+  // Set image sources to files in the /images folder
+  document.getElementById('photo1').src = 'images/photo1.jpg';
+  document.getElementById('photo2').src = 'images/photo2.jpg';
+  document.getElementById('photo3').src = 'images/photo3.jpg';
+  document.getElementById('photo4').src = 'images/photo4.jpg';
+  document.getElementById('photo5').src = 'images/photo5.jpg';
 }
 
 // Load images when page loads
